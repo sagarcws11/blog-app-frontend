@@ -15,7 +15,7 @@ import { useNavigate } from 'react-router-dom';
     const handleLogin = async (e) => {
       e.preventDefault();
       try {
-        const res = await axios.post("http://localhost:5000/api/login", {
+        const res = await axios.post("process.env.API_URL/api/login", {
           email,
           password,
           role,
@@ -36,6 +36,7 @@ import { useNavigate } from 'react-router-dom';
           placeholder="Email"
           className="w-full border px-3 py-2 rounded"
           value={email}
+
           onChange={(e) => setEmail(e.target.value)}
           required
         />

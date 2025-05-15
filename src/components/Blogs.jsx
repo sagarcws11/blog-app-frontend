@@ -9,7 +9,7 @@ function BlogList() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/blogs');
+        const res = await axios.get('process.env.API_URL/api/blogs');
         setBlogs(res.data);
         console.log(res.data,"testing data")
       } catch (err) {
@@ -28,7 +28,7 @@ function BlogList() {
         {blogs.map((blog) => (
           <div key={blog._id} className="bg-white rounded-xl shadow-md overflow-hidden">
             <img 
-              src={`http://localhost:5000${blog.image}`} 
+              src={`process.env.API_URL${blog.image}`} 
               alt={blog.title} 
               className="h-96 w-full object-cover" 
             />
