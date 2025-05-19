@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
     const handleRegister = async (e) => {
       e.preventDefault();
       try {
-        const res = await axios.post("process.env.API_URL/api/register", {
+        const res = await axios.post(`${process.env.API_URL}/api/register`, {
           email,
           password,
           role,
