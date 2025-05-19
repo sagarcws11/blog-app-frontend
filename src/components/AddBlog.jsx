@@ -8,6 +8,8 @@ function AddBlog() {
   const [description, setDescription] = useState('');
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
+  
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,7 +21,7 @@ function AddBlog() {
     }
     formData.append('description', description);
     try {
-      const response = await axios.post(`${process.env.VITE_API_URL}/api/blogs`, formData, {
+      const response = await axios.post(`${API_URL}/api/blogs`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

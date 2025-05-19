@@ -4,12 +4,12 @@ import axios from 'axios';
 function BlogList() {
   const [blogs, setBlogs] = useState([]);
   const [error, setError] = useState(null);
-  
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await axios.get(`${process.env.API_URL}/api/blogs`);
+        const res = await axios.get(`${API_URL}/api/blogs`);
         setBlogs(res.data);
         console.log(res.data,"testing data")
       } catch (err) {

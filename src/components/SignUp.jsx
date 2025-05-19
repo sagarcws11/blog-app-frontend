@@ -9,11 +9,12 @@ import { useNavigate } from 'react-router-dom';
     const [role, setRole] = useState("user");
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
+    const API_URL = import.meta.env.VITE_API_URL;
 
     const handleRegister = async (e) => {
       e.preventDefault();
       try {
-        const res = await axios.post(`${process.env.API_URL}/api/register`, {
+        const res = await axios.post(`${API_URL}/api/register`, {
           email,
           password,
           role,

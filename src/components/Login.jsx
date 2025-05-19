@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
     const [role, setRole] = useState("user"); 
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
+    const API_URL = import.meta.env.VITE_API_URL;
 
     const handleclick=()=>{
       navigate("/SignUp")
@@ -15,7 +16,7 @@ import { useNavigate } from 'react-router-dom';
     const handleLogin = async (e) => {
       e.preventDefault();
       try {
-        const res = await axios.post(`${process.env.API_URL}/api/login`, {
+        const res = await axios.post(`${API_URL}/api/login`, {
           email,
           password,
           role,
