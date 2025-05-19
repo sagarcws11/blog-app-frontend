@@ -19,7 +19,7 @@ function AddBlog() {
     }
     formData.append('description', description);
     try {
-      const response = await axios.post(`${process.env.API_URL}/api/blogs`, formData, {
+      const response = await axios.post(`${process.env.VITE_API_URL}/api/blogs`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
